@@ -4,43 +4,53 @@ title: 酷剑博客
 tagline: 关注前端开发，HTML5和CSS3等领域
 ---
 {% include JB/setup %}
-
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
-
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
-
-## Update Author Attributes
-
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
-
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
-
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
-
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
+<ul class="listing">
+{% for post in paginator.posts %}
+  {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
+  {% if year != y %}
+    {% assign year = y %}
+    <li class="listing-seperator">{{ y }}</li>
+  {% endif %}
+  <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
 </ul>
 
-## To-Do
+<div id="post-pagination" class="paginator">
 
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
+  {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+    <a href="/"><前页</a>
+    {% else %}
+    <a href="/page{{paginator.previous_page}}"><前页</a>
+    {% endif %}
+  {% else %}
+    <span class="previous disabled"><前页</span>
+  {% endif %}
+
+      {% if paginator.page == 1 %}
+      <span class="current-page">1</span>
+      {% else %}
+      <a href="/">1</a>
+      {% endif %}
+
+    {% for count in (2..paginator.total_pages) %}
+      {% if count == paginator.page %}
+      <span class="current-page">{{count}}</span>
+      {% else %}
+      <a href="/page{{count}}">{{count}}</a>
+      {% endif %}
+    {% endfor %}
+
+  {% if paginator.next_page %}
+    <a class="next" href="/page{{paginator.next_page}}">后页></a>
+  {% else %}
+    <span class="next disabled" >后页></span>
+  {% endif %}
+  (共{{ paginator.total_posts }}篇)
+</div>
+
 
 
