@@ -4,6 +4,9 @@ title: 酷剑博客
 tagline: 关注前端开发，HTML5和CSS3等领域
 ---
 {% include JB/setup %}
+
+## 最新文章
+
 <ul class="listing">
 {% for post in paginator.posts %}
   {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
