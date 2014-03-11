@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: 酷剑博客
+tagline: 关注前端开发，HTML5和CSS3等领域
 ---
 {% include JB/setup %}
 
