@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Sacramento';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Sacramento'), local('Sacramento-Regular'), url(http://themes.googleusercontent.com/static/fonts/sacramento/v1/WFDkXpubrEwopJnSlHV6CBsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+}

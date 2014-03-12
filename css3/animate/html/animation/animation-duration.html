@@ -1,0 +1,210 @@
+ <!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="ECD数字音乐设计中心前端开发组" />
+<!--
+    作者：ECD数字音乐设计中心前端开发组
+-->
+<title>animation-duration</title>
+<link href="../../css/api.css" rel="stylesheet" media="screen" />
+<script src="../../js/jquery-1.7.2.min.js"></script>
+<script src="../../jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.js"></script>
+<script src="../../js/ZeroClipboard.js"></script>
+<script src="../../js/lab.js"></script>
+<script>$.SyntaxHighlighter.init();</script>
+</head>
+
+<body>
+<div id="loadHtml">
+    <div class="mod_detail">
+        <div class="column">
+            <h1>animation-duration</h1>
+        </div>
+        <!--语法 star-->
+        <div class="mod_article">
+            <div class="column">
+                <h2>语法</h2>
+                <div class="code">
+                    <div class="code_box">
+                        <div class="code_css">
+                            <strong>animation-duration:</strong> &lt;time&gt;[,&lt;time&gt;]*; 指定对象动画的持续时间 。
+                        </div>
+                    </div>
+                </div>
+                <div class="mod_table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="20%">语法项目</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>初始值</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>适用于</td>
+                                <td>所有元素</td>
+                            </tr>
+                            <tr>
+                                <td>可否继承</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>单位</td>
+                                <td>S</td>
+                            </tr>
+                            <tr>
+                                <td>媒介</td>
+                                <td>视觉</td>
+                            </tr>
+                            <tr>
+                                <td>版本</td>
+                                <td>CSS3.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--语法 end-->
+        <!--说明 star-->
+        <div class="mod_article">
+            <div class="column">
+                <h2>说明</h2>
+                <div class="intro" style=" overflow:hidden;">
+                    <p>检索或设置对象动画的持续时间</p>
+                    <p>如果提供多个属性值，以逗号进行分隔。</p>
+                </div>
+            </div>
+        </div>
+        <!--说明 end-->
+        <!--取值 star-->
+        <div class="mod_article">
+            <div class="column">
+                <h2>取值</h2>
+                <div class="code">
+                    <div class="code_box">
+                        <div class="code_value">
+                            <p>&lt;time&gt;：正数，单位可以是秒(s)或者毫秒(ms)。默认值为0，表明动画不执行。</p>                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--取值 end-->
+        
+        <!--实例代码 star-->
+        <div class="mod_article">
+            <div class="column">
+                <h2>实例代码</h2>
+                <div class="code">
+                    <div class="code_inner">
+                        <span class="mod_tag">CSS</span>
+                        <span class="mod_copy">复制代码<div class="clipboardswf" id="copy_demo_css"></div></span>
+                        <textarea id="css_code" class="code_textarea">
+                        </textarea>
+                        <pre class="language-css">
+.animation_duration{
+    left:10px;
+    top:100px;
+    position:absolute;
+    -webkit-animation:0.5s ease 1 forwards;
+    -webkit-animation-duration:2s;
+    -webkit-animation-name:demo;
+    -moz-animation:0.5s ease 1 forwards;
+    -moz-animation-name:demo;
+    -moz-animation-duration:2s;
+}
+@-webkit-keyframes demo{
+    0%{left:10px;}
+    100%{left:400px;}
+}                        
+                        </pre>
+                    </div>
+                    <div class="code_inner">
+                        <span class="mod_tag">HTML</span>
+                        <span class="mod_copy">复制代码<div class="clipboardswf" id="copy_demo_html"></div></span>
+                        <textarea id="html_code"  class="code_textarea">
+                        </textarea>
+                        <pre class="language-html">
+&lt;div class="demo_box animation_duration"&gt;我一共运行了2秒钟&lt;/div&gt;                        
+                        </pre>
+                    </div>
+                    <a href="#" id="run_demo" class="btn_run">运行</a>
+                    <a href="#" id="run_demo_new" class="btn_run">新窗口运行</a>
+                    
+                </div>
+            </div>
+        </div>
+        <!--实例代码 end-->
+        <!--兼容性 star-->
+        <div class="mod_article">
+            <div class="column">
+                <h2>兼容性</h2>
+                <div class="mod_table">
+                    <table class="center">
+                        <thead>
+                            <tr>
+                                <th class="ie" width="20%">IE</th>
+                                <th class="firefox" width="20%">Firefox</th>
+                                <th class="opera" width="20%">Opera</th>
+                                <th class="safari" width="20%">Safari</th>
+                                <th class="chrome" width="20%">Chrome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>IE 10+</td>
+                                <td>Firefox 3.5+</td>
+                                <td>目前暂无版本支持</td>
+                                <td>Safari 10+</td>
+                                <td>Chrome 2.0+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--兼容性 end-->
+        <!--参考文献 star-->
+        <div class="mod_article">
+            <div class="column">
+                <h2>参考文献</h2>
+                <div class="intro">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <!--参考文献 end-->
+        <!--<div id="js_gui_suc" class="gui_success hidden">复制代码成功!</div>-->
+        <div id="js_gui_suc" class="pop_dialog hidden" style="display:;margin:-100px 0 0 -120px;width:240px;">
+            <div class="inner">
+                <!--小浮层-->
+                <div class="small">
+                    <i class="icon_success"></i>
+                    <h4>代码复制成功</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--代码运行模块-->
+<div class="mod_run_box" id="mod_run_box">
+    <div class="mod_btn_box">
+        <a href="#" id="edit">修改</a>
+        <a href="#" id="run_again">重新运行</a>
+        <a href="#" id="close">关闭</a>
+    </div>
+    <div class="edit_code_box" id="edit_code_box">
+        <textarea id="css_code_edit" class="edit_code_textarea"></textarea>
+        <textarea id="html_code_edit"  class="edit_code_textarea"></textarea>
+    </div>
+    <div class="mod_run_code" id="mod_run_code"></div>
+</div>
+<div class="mask" id="mask"></div>
+</body>
+</html>

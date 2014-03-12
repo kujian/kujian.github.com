@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>动画手册[Guide] - CSS3动画参考</title>
+<link href="css/api.css" rel="stylesheet" media="screen" />
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.js"></script>
+<script type="text/javascript" src="js/ZeroClipboard.js"></script>
+<script src="js/lab.js"></script>
+<script src="js/chrome.js"></script>
+<!--[if lt ie 9]><script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script><![endif]-->
+</head>
+
+<body>
+<header class="mod_header">
+    <div class="inner">
+        <h1><span>CSS3</span>Animation<i class="ico_logo"></i></h1>
+        <ul class="mod_nav">
+            <li><a href="http://caibaojian.com/gallery/css3-gallery">案例分享[Gallery]</a></li>
+            <li><a href="guide.html" class="on">动画手册[Guide]</a></li>
+            <li><a href="tools.html">动画工具[Tool]</a></li>
+        </ul>
+        
+    </div>
+</header>
+<div class="wrap">
+    <div class="menu" id="menu">
+        <div class="menu_scroll">
+            <h2>变形</h2>
+            <ul>
+                <li><a href="html/animation/transform.html" class="hover">transform<span>[变形基础]</span></a></li>
+                <li><a href="html/animation/rotate.html">rotate()<span>[旋转]</span></a></li>
+                <li><a href="html/animation/scale.html">scale()<span>[缩放]</span></a></li>
+                <li><a href="html/animation/translate.html">translate()<span>[位移]</span></a></li>
+                <li><a href="html/animation/skew.html">skew()<span>[倾斜]</span></a></li>
+                <li><a href="html/animation/matrix.html">matrix()<span>[矩阵变形]</span></a></li>
+                <li><a href="html/animation/perspective.html">perspective<span>[透视]</span></a></li>
+            </ul>
+            <!--<h2>变形原点</h2>
+            <ul>
+                <li><a href="html/animation/transform-origin.html">transform-origin<span>[变形原点]</span></a></li>
+            </ul>-->
+            <h2>过渡</h2>
+            <ul>
+                <li><a href="html/animation/transition-property.html">transition-property<span>[过渡的CSS属性]</span></a></li>
+                <li><a href="html/animation/transition-duration.html">transition-duration<span>[过渡时间]</span></a></li>
+                <li><a href="html/animation/transition-delay.html">transition-delay<span>[延迟时间]</span></a></li>
+                <li><a href="html/animation/transition-timing-function.html">transition-timing-function<span>[过渡效果]</span></a></li>
+            </ul>
+            <h2>动画</h2>
+            <ul>
+                <li><a href="html/animation/animation-name.html">animation-name<span>[动画名称]</span></a></li>
+                <li><a href="html/animation/animation-duration.html">animation-duration<span>[动画时间]</span></a></li>
+                <li><a href="html/animation/animation-timing-function.html">animation-timing-function<span>[播放方式]</span></a></li>
+                <li><a href="html/animation/animation-delay.html">animation-delay<span>[开始播放时间]</span></a></li>
+                <li><a href="html/animation/animation-iteration-count.html">animation-iteration-count<span>[播放次数]</span></a></li>
+                <li><a href="html/animation/animation-direction.html">animation-direction<span>[播放方向]</span></a></li>
+                <li><a href="html/animation/animation-fill-mode.html">animation-fill-mode<span>[播放后的状态]</span></a></li>
+                <li><a href="html/animation/animation-play-state.html">animation-play-state<span>[对象动画的状态]</span></a></li>
+
+            </ul>
+            <h2>关联属性</h2>
+            <ul>
+                <li><a href="html/animation/transform-origin.html">transform-origin<span>[变形原点]</span></a></li>
+                <li><a href="html/animation/perspective-origin.html">perspective-origin<span>[透视原点]</span></a></li>
+                <li><a href="html/animation/backface-visibility.html">backface-visibility<span>[隐藏内容的背面]</span></a></li>
+                <li><a href="html/animation/transform-style.html">transform-style<span>[3D呈现]</span></a></li>
+                
+            </ul>
+            
+        </div>
+    </div>
+    <div class="scroll_bar"></div>
+    <div class="content">
+        <div class="inner" id="ajaxHtml">
+            <!--<iframe id="code_window" src="html/animation/transform.html" style="width:100%; border:none;" name="code_window" height="100%" scrolling="no" frameborder="0"></iframe>-->
+        </div>
+    </div>
+</div>
+<footer class="mod_footer">
+    <div>
+    <p>Copyright &copy; 2013 <a href="http://caibaojian.com/">前端博客</a>.</p>
+    <p class="opt"><a href="http://caibaojian.com/about" target="_blank">关于我们</a>|<a href="http://caibaojian.com/about" target="_blank">纠错/反馈</a></p>
+    <p class="support">Power by HTML5 &amp; CSS3. Support for <a href="http://www.google.com/chrome/" target="_blank">Chrome.</a></p>
+    </div>
+</footer>
+<!--代码运行模块-->
+<div class="mod_run_box" id="mod_run_box">
+    <div class="mod_btn_box">
+        <a href="#" id="edit">修改</a>
+        <a href="#" id="run_again">重新运行</a>
+        <a href="#" id="close">关闭</a>
+    </div>
+    <div class="edit_code_box" id="edit_code_box">
+        <textarea id="css_code_edit" class="edit_code_textarea"></textarea>
+        <textarea id="html_code_edit"  class="edit_code_textarea"></textarea>
+    </div>
+    <div class="mod_run_code" id="mod_run_code"></div>
+</div>
+<div class="pop_mask" id="mask" style="display:none;"></div>
+<div id="pop2" class="pop_dialog downs" style="display:none;margin:-150px 0 0 -360px;width:720px;">
+    <div class="hd">
+        
+        <a href="#" class="pop_close" id="close_chrome" title="关闭">X</a>
+    </div>
+    <div class="inner">
+        <!--大浮层-->
+        <div class="down">
+            <a href="http://www.google.com/chrome/" target="_blank" class="down_chrome" title="点击下载Chrome">chrome</a>
+            <a href="http://www.apple.com.cn/safari/" target="_blank" class="down_safari" title="点击下载Safari">safari</a>
+            <a href="http://www.firefox.com.cn/download/" target="_blank" class="down_firefox" title="点击下载Firefox">firefox</a>
+        </div>
+    </div>
+</div>
+<div style="display:none">
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=15910806" charset="UTF-8"></script>
+</div>
+</body>
+</html>

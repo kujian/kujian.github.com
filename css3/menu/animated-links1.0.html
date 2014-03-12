@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh_CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Off Canvas Menu with animated links</title>
+	<meta name="author" content="jack cai"/>
+	<meta name="copyright" content="http://caibaojian.com"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<style type="text/css">
+	body{font:14px/1.8 arial; margin:0; padding:0; max-width:1024px; margin:0 auto 20px;}
+	ul,li,p,h1,section,label,a,input,div,span,h2,h3{margin:0; padding:0;}
+	ul li{list-style:none;}
+	a{text-decoration: none; color:#333;}
+	a:hover{text-decoration: none;}
+	img{max-width:100%; height:auto; border:0;}
+	.mobile{overflow: hidden; -webkit-box-shadow: 0 0 24px rgba(0,0,0,0.5); box-shadow: 0 0 24px rgba(0,0,0,0.5); position: relative; height:100%;}
+	#tm, #tm2,#tm3,#tm4{display: none;}
+	
+	.left-side{position: absolute; left:0; top:0; bottom:0; padding-top:50px; width:150px; background: rgba(50,60,60,.8);}
+	.sidenav li {list-style-type: none;}
+	.sidenav a { color: white; text-decoration: none; }
+	.sidenav b {
+		font: bold 12px/48px Arial; display: block;
+		opacity: 0; -webkit-transform: translateX(50px); -ms-transform: translateX(50px); transform: translateX(50px); -webkit-transition: all 0.4s; transition: all 0.4s;
+	}
+	.right-side .sidenav b{-webkit-transform:translateX(-50px);-ms-transform:translateX(-50px);transform:translateX(-50px);}
+	.sidenav i {
+		display: block; width: 50px; float: left; 
+		font-size: 16px; line-height: 48px; text-align: center;
+	}
+	.right-side{position: absolute; right:0; top:0; bottom: 0; padding-top:50px; width:150px; background: rgb(50,60,60);}
+	.main{
+		position: relative; 
+		width:100%; 
+		background: #fff;
+		-webkit-transition:all .25s; 
+		transition:all .25s;
+		min-height:300px;
+	}
+	.content{}
+	.header{position:relative;background: #FB4700; color:#fff; text-align: center; height:52px; z-index:2;}
+	.label-logo{font-size:22px; line-height:32px; cursor:pointer; display:block; padding-top:4px;}
+	.label-logo i{display:block; line-height:12px;-webkit-transform:rotate(0deg); -ms-transform:rotate(0deg); transform:rotate(0deg); -webkit-transition:all .3s; transition:all .3s}
+	.label-left, .label-right{position: absolute; left:10px; top:8px; cursor: pointer; border:1px solid #fff; border-radius:20px; padding:5px 5px; width:20px; height:20px; line-height:20px; font-size:18px;}
+	.label-right{left:auto; right:10px;}
+	#tm:checked ~ .main{-webkit-transform:translateX(150px);-ms-transform:translateX(150px);transform:translateX(150px);}
+	#tm:checked ~ .left-side li b {opacity: 1; -webkit-transform: translateX(0); -ms-transform: translateX(0); transform: translateX(0);}
+	#tm:checked ~ .left-side li:nth-child(1) b {-webkit-transition-delay: 0.08s;transition-delay: 0.08s;}
+	#tm:checked ~ .left-side li:nth-child(2) b {-webkit-transition-delay: 0.16s;transition-delay: 0.16s;}
+	#tm:checked ~ .left-side li:nth-child(3) b {-webkit-transition-delay: 0.24s;transition-delay: 0.24s;}
+	#tm:checked ~ .left-side li:nth-child(4) b {-webkit-transition-delay: 0.32s;transition-delay: 0.32s;}
+	#tm:checked ~ .left-side li:nth-child(5) b {-webkit-transition-delay: 0.40s;transition-delay: 0.40s;}
+	#tm:checked .left-side li:nth-child(6) b {-webkit-transition-delay: 0.48s;transition-delay: 0.48s;}
+	#tm2:checked ~ .main{-webkit-transform:translateX(-150px);-ms-transform:translateX(-150px);transform:translateX(-150px);}
+	#tm2:checked ~ .right-side .sidenav li b{opacity:1; -webkit-transform:translateX(0); -ms-transform:translateX(0); transform:translateX(0);}
+	#tm2:checked ~ .right-side li:nth-child(1) b {-webkit-transition-delay: 0.08s;transition-delay: 0.08s;}
+	#tm2:checked ~ .right-side li:nth-child(2) b {-webkit-transition-delay: 0.16s;transition-delay: 0.16s;}
+	#tm2:checked ~ .right-side li:nth-child(3) b {-webkit-transition-delay: 0.24s;transition-delay: 0.24s;}
+	#tm2:checked ~ .right-side li:nth-child(4) b {-webkit-transition-delay: 0.32s;transition-delay: 0.32s;}
+	#tm2:checked ~ .right-side li:nth-child(5) b {-webkit-transition-delay: 0.40s;transition-delay: 0.40s;}
+	#tm2:checked ~ .right-side li:nth-child(6) b {-webkit-transition-delay: 0.48s;transition-delay: 0.48s;}
+	
+	.head-img{max-width:100%; height:auto; width:100%; display:block;}
+	.list{background:#E9E9E9;}
+	.list li{padding:10px 0; border-bottom:1px solid #ddd; margin-left:10px; zoom:1;}
+	.list li:before, .list li:after{display:table; content:"";}
+	.list li:after{clear:both;}
+	.thumb-img{float:left; margin-right:20px;}
+	.entry-cont{overflow:hidden;}
+	.entry-cont h2{font-size:20px;}
+	.entry-meta{float:right;}
+	.top-nav{display:none; position:absolute; top:100%; left:0; right:0; background:rgba(0,0,0,0.3); width:100%;}
+	.top-nav ul{font-size:0; *word-spacing:-1px; padding:6px 4px 4px;}
+	.top-nav li{display:inline-block; *display:inline; *zoom:1; vertical-align:top; letter-spacing:normal; word-spacing:normal; font-size:14px; width:20%; text-align:center;}
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		.top-nav ul{letter-spacing:-5px;}
+	}
+	.top-nav li a{color:#fff; padding:0 4px; display:block;}
+	.top-nav li i{display:block; padding:4px; border:1px solid #fff; border-radius:15px; width:15px; height:15px; margin:0 auto 4px;}
+	#tm3:checked ~ .top-nav{display:block;}
+	#tm3:checked ~ .label-logo i{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg);}
+	
+	/*search*/
+	.search{display:none;}
+	.label-search{position:absolute; top:20px; left:10px; color:#fff; border-bottom:1px solid #fff; display:block; width:128px; font-size:14px; line-height:1.4; cursor:pointer}
+	.label-search i{float:right; opacity:.6; font-weight:normal; padding-right:10px;}
+	.search-form{background:rgba(0,0,0,0.1); padding:10px; position:relative;}
+	.search-text{border:1px solid #ddd; padding:3px 6px; height:24px; width:88%; box-sizing:border-box; border-radius:8px;}
+	.search-btn{position:absolute; right:10px; top:10px; width:10%; min-width:44px;}
+	.close-left .main{-webkit-transform:translateX(0px);-ms-transform:translateX(0px);transform:translateX(0px);}
+	#tm4:checked ~ .main .list{display:none;}
+	#tm4:checked ~ .main .search{display:block;}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div class="mobile">
+			<input type="checkbox" id="tm" name="radiotex"/>
+			<input type="checkbox" id="tm2" name="radiotex"/>
+			<input type="checkbox" id="tm4" name="radiotex"/>
+			<div class="left-side">
+				<ul class="sidenav left-nav">
+					<li><a href="#"><i class="fa fa-home"></i><b>新联大厅</b></a></li>
+					<li><a href="#"><i class="fa fa-inbox"></i><b>健康大学</b></a></li>
+					<li><a href="#"><i class="fa fa-plus-square-o"></i><b>健康导师</b></a></li>
+					<li><a href="#"><i class="fa fa-book"></i><b>健康档案</b></a></li>
+					<li><a href="#"><i class="fa fa-star"></i><b>新联芯II</b></a></li>
+				</ul>
+			</div>
+			<label class="label-search" for="tm4"><i class="fa fa-search"></i>搜索</label>
+			<div class="right-side">
+				<ul class="sidenav right-nav">
+					<li><a href="#"><i class="fa fa-users"></i><b>我的好友</b></a></li>
+					<li><a href="#"><i class="fa fa-bell-o"></i><b>我的消息</b></a></li>
+					<li><a href="#"><i class="fa fa-pencil"></i><b>我发表的帖子</b></a></li>
+					<li><a href="#"><i class="fa fa-bookmark"></i><b>我的收藏</b></a></li>
+					<li><a href="#"><i class="fa fa-cog"></i><b>账户设置</b></a></li>
+				</ul>
+			</div>
+			<div class="main">
+				<div class="content">
+					<div class="header">
+						<label for="tm" class="label-left"><i class="fa fa-bars"></i></label>
+						<input type="checkbox" id="tm3"/>
+						<label for="tm3" class="label-logo">健康大学首页<i class="fa fa-angle-down"></i></label>
+						<div class="top-nav">
+							<ul>
+								<li><a href=""><i class="fa fa-bars"></i>编辑栏目分类</a></li>
+								<li><a href=""><i class="fa fa-bars"></i>编辑栏目分类</a></li>
+								<li><a href=""><i class="fa fa-bars"></i>编辑栏目分类</a></li>
+								<li><a href=""><i class="fa fa-bars"></i>编辑栏目分类</a></li>
+								<li><a href=""><i class="fa fa-bars"></i>编辑栏目分类</a></li>
+							</ul>
+						</div>
+						<label for="tm2" class="label-right"><i class="fa fa-user"></i></label>
+					</div>
+					<div class="list">
+						<img src="jk-head.jpg" class="head-img"/>
+						<ul>
+							<li>
+								<a href=""><img src="thumbnail.jpg" class="thumb-img"/></a>
+								<a href="#">
+									<div class="entry-cont">
+										<h2>水果和蔬菜是治疗老年人高血压的最佳食品</h2>
+										<p>高血压是一种老年人高发疾病……</p>
+										<div class="entry-meta"><span class="muted"><i class="fa fa-comments-o"></i>4</span></div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=""><img src="thumbnail.jpg" class="thumb-img"/></a>
+								<a href="#">
+									<div class="entry-cont">
+										<h2>水果和蔬菜是治疗老年人高血压的最佳食品</h2>
+										<p>高血压是一种老年人高发疾病……</p>
+										<div class="entry-meta"><span class="muted"><i class="fa fa-comments-o"></i>4</span></div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=""><img src="thumbnail.jpg" class="thumb-img"/></a>
+								<a href="#">
+									<div class="entry-cont">
+										<h2>水果和蔬菜是治疗老年人高血压的最佳食品</h2>
+										<p>高血压是一种老年人高发疾病……</p>
+										<div class="entry-meta"><span class="muted"><i class="fa fa-comments-o"></i>4</span></div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=""><img src="thumbnail.jpg" class="thumb-img"/></a>
+								<a href="#">
+									<div class="entry-cont">
+										<h2>水果和蔬菜是治疗老年人高血压的最佳食品</h2>
+										<p>高血压是一种老年人高发疾病……</p>
+										<div class="entry-meta"><span class="muted"><i class="fa fa-comments-o"></i>4</span></div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=""><img src="thumbnail.jpg" class="thumb-img"/></a>
+								<a href="#">
+									<div class="entry-cont">
+										<h2>水果和蔬菜是治疗老年人高血压的最佳食品</h2>
+										<p>高血压是一种老年人高发疾病……</p>
+										<div class="entry-meta"><span class="muted"><i class="fa fa-comments-o"></i>4</span></div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href=""><img src="thumbnail.jpg" class="thumb-img"/></a>
+								<a href="#">
+									<div class="entry-cont">
+										<h2>水果和蔬菜是治疗老年人高血压的最佳食品</h2>
+										<p>高血压是一种老年人高发疾病……</p>
+										<div class="entry-meta"><span class="muted"><i class="fa fa-comments-o"></i>4</span></div>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="search">
+						<form class="search-form">
+							<input type="text" class="search-text" placeholder="请输入内容"/><button class="search-btn">搜索</button>
+						</form>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

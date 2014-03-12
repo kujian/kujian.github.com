@@ -1,0 +1,1030 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Create CSS3 - Easy CSS3 Generator</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Generate CSS3 code quickly and easily with Create CSS3. Generates CSS3 for all the major browsers (Safari, Chrome, FireFox, Opera and IE). Created by Jason Stockton." />
+		
+		<link href='http://fonts.googleapis.com/css?family=Chivo:900,400' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,900,800' rel='stylesheet' type='text/css'>
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+		<script src="js/main.js" type="text/javascript"></script>
+	</head>
+	<body>
+		
+		<div id="options-bar">
+			<div id="header">
+				CREATE CSS3
+				<div id="biline">
+					EASY CSS3 GENERATOR
+				</div>
+			</div>
+			<div class="clear"></div>
+			<ul id="options-menu">
+				<!-- @Font Face -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Font Face:</strong></p>
+							<p>Allows you to use non-websafe fonts in your website.</p>
+							<p>You will need either an .otf or ttf file and you must have permission to embed the font into your website.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://www.google.com/webfonts" target="_blank">Free Web legal fonts available from Google</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="aff" class="hidden" /> <b onclick="selectCheckbox('aff');">@font-face<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="aff-div" class="controls">
+						<form id="aff-form" method="post" action="http://font2web.com/convert.php" enctype="multipart/form-data">
+						    <input type="hidden" name="MAX_FILE_SIZE" value="999999" />
+							<input name="userfile" type="file" id="aff-file" />
+							<div class="fontface-disclaimer">
+								By converting a font, you have checked your font licence and it allows embedding of fonts on a website.<br/>Powered by <a href="http://font2web.com/" target="_blank">Font2Web</a>.
+							</div>
+							<!--<input type="submit" name="submit" style="cursor:pointer;border:0;margin-top:20px" value="Go" />-->
+						</form>
+					</div>
+				</li>
+				
+				<!-- Backface Visibility -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Backface Visibility:</strong></p>
+							<p>The backface-visibility property defines whether or not an element should be visible when not facing the screen.</p>
+							<p>This property is useful when an element is rotated, and you do not want to see its backside.</p>
+							<p>In order to get a true 3D effect you will need to set the perspective of the parent which will contain the 3D environment, or add transform perspective to this element.</p>
+							<p>Used for CSS3 3D properties.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 10+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/backface-visibility" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="bfv" class="hidden" /> <b onclick="selectCheckbox('bfv');">Backface Visibility<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="bfv-div" class="controls">
+						<div class="option-block">
+							<label>Backface Visibility</label>
+							<select name="" id="bfv-val">
+								<option value="visible">Visible</option>
+								<option value="hidden">Hidden</option>
+							</select>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Background Gradient -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Background Gradient:</strong></p>
+							<p>The background gradient property allows you to fill the background of an element with a gradient.</p>
+							<p>Create CSS3 allows you to generate basic linear and radial gradients.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 9+, Chrome, Safari, Firefox, Opera
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="bg" class="hidden" /> <b onclick="selectCheckbox('bg');">Background Gradient<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="bg-div" class="controls">
+						<label style="width: 35px;">Type</label>
+						<select name="" id="bg-type">
+							<option value="linear-top">Linear (Top &rarr; Bottom)</option>
+							<option value="linear-left">Linear (Left &rarr; Right)</option>
+							<option value="radial">Radial</option>
+						</select>
+						<div class="clear"></div>
+						<label style="width: 35px;">Color</label>
+						<select name="" id="bg-color-type">
+							<option value="hex">Hex (#000)</option>
+							<option value="rgba">RGBA</option>
+						</select>
+						<div class="clear"></div>
+						<div id="bglt-div">
+							<div class="bg-hex">
+								<div class="option-block">
+									<label style="width:50px;">Top #</label><input type="text" name="" id="bglt-top" value="000000" style="width:50px;" />
+								</div>
+								<div class="option-block">
+									<label style="width:50px;">Bottom #</label><input type="text" name="" id="bglt-bottom" value="000000" style="width:50px;" />
+								</div>
+							</div>
+							<div class="bg-rgba">
+								<label style="margin-bottom: 6px;">Top:</label>
+								<div class="clear"></div>
+								<div class="option-block">
+									<label>R</label><input type="text" name="" id="bglt-top-r" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>G</label><input type="text" name="" id="bglt-top-g" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>B</label><input type="text" name="" id="bglt-top-b" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>A</label><input type="text" name="" id="bglt-top-a" value="1" style="width:30px;" />
+								</div>	
+								<div class="clear"></div>
+								<label style="margin-bottom: 6px;">Bottom:</label>
+								<div class="clear"></div>
+								<div class="option-block">
+									<label>R</label><input type="text" name="" id="bglt-bottom-r" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>G</label><input type="text" name="" id="bglt-bottom-g" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>B</label><input type="text" name="" id="bglt-bottom-b" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>A</label><input type="text" name="" id="bglt-bottom-a" value="1" style="width:30px;" />
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div id="bgll-div">
+							<div class="bg-hex">
+								<div class="option-block">
+									<label style="width:50px;">Left #</label><input type="text" name="" id="bgll-left" value="000000" style="width:50px;" />
+								</div>
+								<div class="option-block">
+									<label style="width:50px;">Right #</label><input type="text" name="" id="bgll-right" value="000000" style="width:50px;" />
+								</div>
+							</div>
+							<div class="bg-rgba">
+								<label style="margin-bottom: 6px;">Left:</label>
+								<div class="clear"></div>
+								<div class="option-block">
+									<label>R</label><input type="text" name="" id="bgll-left-r" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>G</label><input type="text" name="" id="bgll-left-g" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>B</label><input type="text" name="" id="bgll-left-b" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>A</label><input type="text" name="" id="bgll-left-a" value="1" style="width:30px;" />
+								</div>
+								<div class="clear"></div>
+								<label style="margin-bottom: 6px;">Right:</label>
+								<div class="clear"></div>
+								<div class="option-block">
+									<label>R</label><input type="text" name="" id="bgll-right-r" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>G</label><input type="text" name="" id="bgll-right-g" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>B</label><input type="text" name="" id="bgll-right-b" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>A</label><input type="text" name="" id="bgll-right-a" value="1" style="width:30px;" />
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div id="bgr-div">
+							<div class="bg-hex">
+								<div class="option-block">
+									<label style="width:50px;">Inner #</label><input type="text" name="" id="bgr-center" value="000000" style="width:50px;" />
+								</div>
+								<div class="option-block">
+									<label style="width:50px;">Outer #</label><input type="text" name="" id="bgr-outer" value="000000" style="width:50px;" />
+								</div>
+							</div>
+							<div class="bg-rgba">
+								<label style="margin-bottom: 6px;">Inner:</label>
+								<div class="clear"></div>
+								<div class="option-block">
+									<label>R</label><input type="text" name="" id="bgr-center-r" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>G</label><input type="text" name="" id="bgr-center-g" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>B</label><input type="text" name="" id="bgr-center-b" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>A</label><input type="text" name="" id="bgr-center-a" value="1" style="width:30px;" />
+								</div>
+								<div class="clear"></div>
+								<label style="margin-bottom: 6px;">Outer:</label>
+								<div class="clear"></div>
+								<div class="option-block">
+									<label>R</label><input type="text" name="" id="bgr-outer-r" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>G</label><input type="text" name="" id="bgr-outer-g" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>B</label><input type="text" name="" id="bgr-outer-b" value="0" style="width:30px;" />
+								</div>
+								<div class="option-block">
+									<label>A</label><input type="text" name="" id="bgr-outer-a" value="1" style="width:30px;" />
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Border Radius -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Border Radius:</strong></p>
+							<p>The background radius property allows you to put curved edges onto an element.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 9+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/border-radius" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="br" class="hidden" /> <b onclick="selectCheckbox('br');">Border Radius<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="br-div"  class="controls">
+						<div class="option-block">
+							<label style="width: 75px;">Top Left</label><input type="text" name="" id="br-tl" value="0" style="width:25px;" />
+						</div>
+						<div class="option-block">
+							<label style="width: 75px;">Top Right</label><input type="text" name="" id="br-tr" value="0" style="width:25px;" />
+						</div>
+						<div class="clear"></div>
+						<div class="option-block">
+							<label style="width: 75px;">Bottom Left</label><input type="text" name="" id="br-bl" value="0" style="width:25px;" />
+						</div>
+						<div class="option-block">
+							<label style="width: 75px;">Bottom Right</label><input type="text" name="" id="br-br" value="0" style="width:25px;" />
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Box Shadow - Outer -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Box Shadow (Outer):</strong></p>
+							<p>The box shadow property allows you to put a shadow onto an element.</p>
+							<p>This outer box shadow will allow you to put the shadow on the outside of an element (drop shadow).</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 9+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/box-shadow" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="bs" class="hidden" /> <b onclick="selectCheckbox('bs');">Box Shadow - Outer<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="bs-div" class="controls">
+						<div class="option-block">
+							<label>X</label><input type="text" name="" id="bs-x" value="0" style="width:30px;" />
+						</div>
+						<div class="option-block">
+							<label>Y</label><input type="text" name="" id="bs-y" value="0" style="width:30px;" />
+						</div>
+						<div class="option-block">
+							<label>Size</label><input type="text" name="" id="bs-size" value="0" style="width:30px;" />
+						</div>
+						<div class="clear"></div>
+						<label>Color</label>
+						<select name="" id="bs-color-type">
+							<option value="hex">Hex (#000)</option>
+							<option value="rgba">RGBA</option>
+						</select>
+						<div class="clear"></div>
+						<div id="bs-color-div-hex">
+							<label>#</label><input type="text" name="" id="bs-color-hex" value="000000" style="width:50px;" />
+						</div>
+						<div id="bs-color-div-rgba">
+							<div class="option-block">
+								<label>R</label><input type="text" name="" id="bs-color-r" value="0" style="width:30px;" />
+							</div>
+							<div class="option-block">
+								<label>G</label><input type="text" name="" id="bs-color-g" value="0" style="width:30px;" />
+							</div>
+							<div class="option-block">
+								<label>B</label><input type="text" name="" id="bs-color-b" value="0" style="width:30px;" />
+							</div>
+							<div class="option-block">
+								<label>A</label><input type="text" name="" id="bs-color-a" value="1" style="width:30px;" />
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</li>
+				
+				<!-- Box Shadow - Inner -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Box Shadow (Inner):</strong></p>
+							<p>The box shadow property allows you to put a shadow onto an element.</p>
+							<p>This inset box shadow will allow you to put the shadow on the inside of an element (inner shadow).</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 9+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/box-shadow" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="ibs" class="hidden" /> <b onclick="selectCheckbox('ibs');">Box Shadow - Inner<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="ibs-div" class="controls">
+						<div class="option-block">
+							<label>X</label><input type="text" name="" id="ibs-x" value="0" style="width:30px;" />
+						</div>
+						<div class="option-block">
+							<label>Y</label><input type="text" name="" id="ibs-y" value="0" style="width:30px;" />
+						</div>
+						<div class="option-block">
+							<label>Size</label><input type="text" name="" id="ibs-size" value="0" style="width:30px;" />
+						</div>
+						<div class="clear"></div>
+						<label>Color</label>
+						<select name="" id="ibs-color-type">
+							<option value="hex">Hex (#000)</option>
+							<option value="rgba">RGBA</option>
+						</select>
+						<div class="clear"></div>
+						<div id="ibs-color-div-hex">
+							<label>#</label><input type="text" name="" id="ibs-color-hex" value="000000" style="width:50px;" />
+						</div>
+						<div id="ibs-color-div-rgba">
+							<div class="option-block">
+								<label>R</label><input type="text" name="" id="ibs-color-r" value="0" style="width:30px;" />
+							</div>
+							<div class="option-block">
+								<label>G</label><input type="text" name="" id="ibs-color-g" value="0" style="width:30px;" />
+							</div>
+							<div class="option-block">
+								<label>B</label><input type="text" name="" id="ibs-color-b" value="0" style="width:30px;" />
+							</div>
+							<div class="option-block">
+								<label>A</label><input type="text" name="" id="ibs-color-a" value="1" style="width:30px;" />
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</li>
+				
+				<!-- Box Sizing -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Box Sizing:</strong></p>
+							<p>The box-sizing property allows you to define whether to include padding and borders within the specified width.</p>
+							<p>For example, if you would like a box to be exactly 200px wide, you can specify box-sizing as "border-box", set the width as 200px, and any padding or border will stay within the 200px. Content-box is the standard rendering (padding and border is in addition to the width).</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 8+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/box-sizing" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="boxsiz" class="hidden" /> <b onclick="selectCheckbox('boxsiz');">Box Sizing<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="boxsiz-div" class="controls">
+						<div class="option-block">
+							<label>Transform Style</label>
+							<select name="" id="boxsiz-val">
+								<option value="content-box">Content Box</option>
+								<option value="border-box">Border Box</option>
+								<option value="inherit">Inherit</option>
+							</select>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Columns -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Columns:</strong></p>
+							<p>The column count and column gap properties allow you to split your text into multiple columns within an element.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 10+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/columns" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="colm" class="hidden" /> <b onclick="selectCheckbox('colm');">Columns<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="colm-div" class="controls">
+						<div class="option-block">
+							<div class="option-block">
+								<label style="width: 125px;">Number of Columns</label><input type="text" name="" id="colm-num" value="2" style="width:30px;" />
+							</div>
+							<div class="option-block">
+								<label style="width: 125px;">Gap Width (px)</label><input type="text" name="" id="colm-gap" value="25" style="width:30px;" />
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Opacity -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Opacity:</strong></p>
+							<p>The opacity property allows you to make an element be transparent, semi-transparent or non-transparent.</p>
+							<p>Uses values (0-1). 0 = fully transparent, 0.5 = 50% transparent, 1 = no transparency.</p>
+							<p>Create CSS3 will generate a fall back for older version of Internet Explorer that doesn't allow the opacity attribute.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/opacityp" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="op" class="hidden" /> <b onclick="selectCheckbox('op');">Opacity<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="op-div" class="controls">
+						<div class="option-block">
+							<label>Opacity</label><input type="text" name="" id="op-opacity" value="1" style="width:30px;" />
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Perspective -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Perspective:</strong></p>
+							<p>The perspective property creates the size of a 3D environment in pixels (z-axis).</p>
+							<p>The perspective property needs to be placed on the parent of the element(s) you would like to use the 3D perspective on. The perspective you set will effect the children of the element you place it on.</p>
+							<p>Used for CSS3 3D properties.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 10+, Chrome, Safari, Firefox
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/perspective" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="per" class="hidden" /> <b onclick="selectCheckbox('per');">Perspective<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="per-div" class="controls">
+						<div class="option-block">
+							<label>Perspective Size (px)</label><input type="text" name="" id="per-px" value="500" style="width:30px;" />
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Perspective Origin -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Perspective Origin:</strong></p>
+							<p>The perspective origin property sets the position you would the like the perspective to be effective from (similar to how Transform Origin works).</p>
+							<p>The perspective origin needs to be placed on the parent of the element(s) you would like to use the 3D perspective on. The perspective origin you set will effect the children of the element you place it on.</p>
+							<p>Should be used in conjunction with the perspective property.</p>
+							<p>Used for CSS3 3D properties</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 10+, Chrome, Safari, Firefox
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/perspective-origin" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="pero" class="hidden" /> <b onclick="selectCheckbox('pero');">Perspective Origin<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="pero-div" class="controls">
+						<div class="option-block">
+							<div class="option-block">
+								<label>X</label><input type="text" name="" id="pero-x" value="50" style="width:30px;" /> 
+								<select id="pero-x-t" name="">
+									<option value="px">px</option>
+									<option value="%" selected="selected">%</option>
+								</select>
+							</div>
+							<div class="option-block">
+								<label>Y</label><input type="text" name="" id="pero-y" value="50" style="width:30px;" /> 
+								<select id="pero-y-t" name="">
+									<option value="px">px</option>
+									<option value="%" selected="selected">%</option>
+								</select>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Text Shadow -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Text Shadow:</strong></p>
+							<p>The text shadow property allows you to put a shadow onto an elements text.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 9+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/text-shadow" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="ts" class="hidden" /> <b onclick="selectCheckbox('ts');">Text Shadow<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="ts-div" class="controls">
+						<div class="option-block">
+							<label>X</label><input type="text" name="" id="ts-x" value="0" style="width:30px;" />
+						</div>
+						<div class="option-block">
+							<label>Y</label><input type="text" name="" id="ts-y" value="0" style="width:30px;" />
+						</div>
+						<div class="option-block">
+							<label>Blur</label><input type="text" name="" id="ts-size" value="0" style="width:30px;" />
+						</div>
+						<div class="clear"></div>
+						<label>Color</label>
+						<select name="" id="ts-color-type">
+							<option value="hex">Hex (#000)</option>
+							<option value="rgba">RGBA</option>
+						</select>
+						<div class="clear"></div>
+						<div id="ts-color-div-hex">
+							<label>#</label><input type="text" name="" id="ts-color-hex" value="000000" style="width:50px;" />
+						</div>
+						<div id="ts-color-div-rgba">
+							<div class="option-block">
+								<label>R</label><input type="text" name="" id="ts-color-r" value="0" style="width:30px;" />
+							</div>
+							<div class="option-block">
+								<label>G</label><input type="text" name="" id="ts-color-g" value="0" style="width:30px;" />
+							</div>
+							<div class="option-block">
+								<label>B</label><input type="text" name="" id="ts-color-b" value="0" style="width:30px;" />
+							</div>
+							<div class="option-block">
+								<label>A</label><input type="text" name="" id="ts-color-a" value="1" style="width:30px;" />
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</li>
+				
+				<!-- Transform Perspective -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Transform - Perspective:</strong></p>
+							<p>The transform perspective property allows you to set the 3D perspective of an element in pixels (z-axis).</p>
+							<p>Used for 3D properties.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 10+, Chrome, Safari, Firefox
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/transform" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="trap" class="hidden" /> <b onclick="selectCheckbox('trap');">Transform - Perspective<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="trap-div" class="controls">
+						<div class="option-block">
+							<label>Perspective Size (px)</label><input type="text" name="" id="trap-px" value="500" style="width:30px;" />
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Transform - Rotate -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Transform - Rotate:</strong></p>
+							<p>The transform rotate property allows you to rotate an element.</p>
+							<p>You can set the origin of where the element will rotate from (the axis point) using the transform origin property.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 9+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/transform" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="tr" class="hidden" /> <b onclick="selectCheckbox('tr');">Transform - Rotate<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="tr-div" class="controls">
+						<div class="option-block">
+							<label>Degrees</label><input type="text" name="" id="tr-deg" value="0" style="width:30px;" />
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Transform - Rotate - 3D -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Transform - Rotate 3D:</strong></p>
+							<p>The transform rotate 3D property allows you to rotate an element within a 3D environment.</p>
+							<p>In order to get a true 3D effect you will need to set the perspective of the parent which will contain the 3D environment, or add transform perspective to this element.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 10+, Chrome, Safari, Firefox
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/transform" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="tr3d" class="hidden" /> <b onclick="selectCheckbox('tr3d');">Transform - Rotate - 3D<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="tr3d-div" class="controls">
+						<div class="option-block">
+							<div class="option-block">
+								<input type="checkbox" id="tr3d-x-on" checked="checked" value="on" style="margin-top: 7px;" /> <label onclick="selectCheckbox('tr3d-x-on');">X (deg)</label><input type="text" name="" id="tr3d-x-deg" value="0" style="width:30px;" />
+							</div>
+							<div class="option-block">
+								<input type="checkbox" id="tr3d-y-on" checked="checked" value="on" style="margin-top: 7px;" /> <label onclick="selectCheckbox('tr3d-y-on');">Y (deg)</label><input type="text" name="" id="tr3d-y-deg" value="0" style="width:30px;" />
+							</div>
+							<div class="option-block">
+								<input type="checkbox" id="tr3d-z-on" checked="checked" value="on" style="margin-top: 7px;" /> <label onclick="selectCheckbox('tr3d-z-on');">Z (deg)</label><input type="text" name="" id="tr3d-z-deg" value="0" style="width:30px;" />
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Transform - Scale -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Transform - Scale:</strong></p>
+							<p>The transform rotate property allows you to scale an element and it's children.</p>
+							<p>1 is the normal size (1:1 scale), 0.5 = 50% of the size, 2 = twice the size.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 9+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/transform" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="tsc" class="hidden" /> <b onclick="selectCheckbox('tsc');">Transform - Scale<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="tsc-div" class="controls">
+						<div class="option-block">
+							<label>Size</label><input type="text" name="" id="tsc-size" value="1" style="width:30px;" />
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Transform - Scale - 3D -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Transform - Scale 3D:</strong></p>
+							<p>The transform rotate property allows you to scale an element and it's children in a 3D environment.</p>
+							<p>In order to get a true 3D effect you will need to set the perspective of the parent which will contain the 3D environment, or add transform perspective to this element.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 10+, Chrome, Safari, Firefox
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/transform" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="tsc3d" class="hidden" /> <b onclick="selectCheckbox('tsc3d');">Transform - Scale - 3D<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="tsc3d-div" class="controls">
+						<div class="option-block">
+							<label>X</label><input type="text" name="" id="tsc3d-x" value="1" style="width:30px;" />
+						</div>
+						<div class="option-block">
+							<label>Y</label><input type="text" name="" id="tsc3d-y" value="1" style="width:30px;" /> 
+						</div>
+						<div class="option-block">
+							<label>Z</label><input type="text" name="" id="tsc3d-z" value="1" style="width:30px;" /> 
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Transform - Skew -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Transform - Skew:</strong></p>
+							<p>The transform skew property allows you to skew an element and it's children.</p>
+							<p>1 is the normal size (1:1 scale), 0.5 = 50% of the size, 2 = twice the size.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 9+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/transform" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="tsk" class="hidden" /> <b onclick="selectCheckbox('tsk');">Transform - Skew<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="tsk-div" class="controls">
+						<div class="option-block">
+							<label>X (deg)</label><input type="text" name="" id="tsk-x" value="0" style="width:30px;" />
+						</div>
+						<div class="option-block">
+							<label>Y (deg)</label><input type="text" name="" id="tsk-y" value="0" style="width:30px;" />
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Transform - Translate -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Transform - Translate:</strong></p>
+							<p>The transform translate property allows you to move an element and it's children's positions.</p>
+							<p>This varies from using the left and top properties as you can have an element relative, when you translate the element it will visually move the element however, the original relative position of the element will remain the same. Left and top require you to set an element as absolute and changing the properties physically moves the element around the screen.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 9+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/transform" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="ttr" class="hidden" /> <b onclick="selectCheckbox('ttr');">Transform - Translate<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="ttr-div" class="controls">
+						<div class="option-block">
+							<label>X</label><input type="text" name="" id="ttr-x" value="0" style="width:30px;" /> 
+							<select id="ttr-x-t" name="">
+								<option value="px">px</option>
+								<option value="%">%</option>
+							</select>
+						</div>
+						<div class="option-block">
+							<label>Y</label><input type="text" name="" id="ttr-y" value="0" style="width:30px;" /> 
+							<select id="ttr-y-t" name="">
+								<option value="px">px</option>
+								<option value="%">%</option>
+							</select>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				
+				<!-- Transform - Translate - 3D -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Transform - Translate 3D:</strong></p>
+							<p>The transform translate 3D property allows you to move an element and it's children's positions in a 3D environment.</p>
+							<p>In order to get a true 3D effect you will need to set the perspective of the parent which will contain the 3D environment, or add transform perspective to this element.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 10+, Chrome, Safari, Firefox
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/transform" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="ttr3d" class="hidden" /> <b onclick="selectCheckbox('ttr3d');">Transform - Translate - 3D<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="ttr3d-div" class="controls">
+						<div class="option-block">
+							<label>X</label><input type="text" name="" id="ttr3d-x" value="0" style="width:30px;" /> 
+							<select id="ttr3d-x-t" name="">
+								<option value="px">px</option>
+								<option value="%">%</option>
+							</select>
+						</div>
+						<div class="option-block">
+							<label>Y</label><input type="text" name="" id="ttr3d-y" value="0" style="width:30px;" /> 
+							<select id="ttr3d-y-t" name="">
+								<option value="px">px</option>
+								<option value="%">%</option>
+							</select>
+						</div>
+						<div class="option-block">
+							<label>Z</label><input type="text" name="" id="ttr3d-z" value="0" style="width:30px;" /> 
+							<select id="ttr3d-z-t" name="">
+								<option value="px">px</option>
+								<option value="%">%</option>
+							</select>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Transform Origin -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Transform Origin:</strong></p>
+							<p>The transform origin property allows you set the origin from which a transform will take place.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 9+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/transform-origin" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="tro" class="hidden" /> <b onclick="selectCheckbox('tro');">Transform Origin<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="tro-div" class="controls">
+						<div class="option-block">
+							<div class="option-block">
+								<label>X</label><input type="text" name="" id="tro-x" value="50" style="width:30px;" /> 
+								<select id="tro-x-t" name="">
+									<option value="px">px</option>
+									<option value="%" selected="selected">%</option>
+								</select>
+							</div>
+							<div class="option-block">
+								<label>Y</label><input type="text" name="" id="tro-y" value="50" style="width:30px;" /> 
+								<select id="tro-y-t" name="">
+									<option value="px">px</option>
+									<option value="%" selected="selected">%</option>
+								</select>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Transform Style -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Transform Style:</strong></p>
+							<p>The transform style property allows you set the style of transform for a particular element (2D or 3D).</p>
+							<p>To use 3D you must set the perspective of the parent which will contain the 3D environment, or add transform perspective to this element.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 10+, Chrome, Safari, Firefox
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/transform-style" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="trst" class="hidden" /> <b onclick="selectCheckbox('trst');">Transform Style<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="trst-div" class="controls">
+						<div class="option-block">
+							<label>Transform Style</label>
+							<select name="" id="trst-val">
+								<option value="flat">Flat</option>
+								<option value="preserve-3d">Preserve 3D</option>
+							</select>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+				
+				<!-- Transition -->
+				<li>
+					<div class="huh">
+						<span class="text">?</span>
+						<div class="ooooh">
+							<p><strong>Generate CSS3 Transition:</strong></p>
+							<p>The transition property allows you make an element transition between 2 styles.</p>
+							<p>When using transition you will only need to set the transition on the elements main class. After this has been done any :hover classes will automatically animation on and off. You can also add and remove new classes to the element using javascript and the element will transition between styles.</p>
+							<p class="support">
+								<strong>Browser Support:</strong><br/>
+								IE 10+, Chrome, Safari, Firefox, Opera
+							</p>
+							<p class="w3c-schools">
+								<a href="http://docs.webplatform.org/wiki/css/properties/transition" target="_blank">More Info at Web Platform</a>
+							</p>
+						</div>
+					</div>
+					<input type="checkbox" id="tra" class="hidden" /> <b onclick="selectCheckbox('tra');">Transition<div class="close">X</div></b>
+					<div class="clear"></div>
+					<div id="tra-div" class="controls">
+						<div class="option-block">
+							<label>Property</label><input type="text" name="" id="tra-property" value="all" style="width:75px;" />
+						</div>
+						<div class="option-block">
+							<label>Duration (sec)</label><input type="text" name="" id="tra-duration" value="0.5" style="width:30px;" />
+						</div>
+						<div class="option-block">
+							<label>Timing Function</label><select id="tra-timing">
+								<option value="ease">ease</option>
+								<option value="linear">linear</option>
+								<option value="ease-in">ease-in</option>
+								<option value="ease-out">ease-out</option>
+								<option value="ease-in-out">ease-in-out</option>
+								<option value="step-start">step-start</option>
+								<option value="step-end">step-end</option>
+							</select>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</li>
+			</ul>
+			<div class="copyright">
+				&copy; <a href="http://www.jasonstockton.com.au/" target="_blank">Jason Stockton</a> 2013. All Rights Reserved.
+				<ul id="social">
+					<li>
+						<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.createcss3.com&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;font=tahoma&amp;colorscheme=dark&amp;action=like&amp;height=90&amp;appId=245956252165090" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:49px; height:90px;" allowTransparency="true"></iframe>
+					</li>
+					<li>
+						<div class="g-plusone" data-size="tall" data-href="http://www.createcss3.com"></div>
+						<script type="text/javascript">
+						  (function() {
+						    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+						    po.src = 'https://apis.google.com/js/plusone.js';
+						    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+						  })();
+						</script>
+					</li>
+					<li class="last">
+						<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.createcss3.com" data-text="Generate CSS3 for more browsers faster than ever" data-count="vertical" data-hashtags="CSS3">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="textarea">
+			<div class="textarea-in">
+				<textarea id="code"></textarea>
+			</div>
+			<div id="preview" align="center">
+				<div id="preview-in">
+					<div id="preview-render">
+						<div id="preview-box">Preview</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="display:none">
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=15910806" charset="UTF-8"></script>
+</div>
+	</body>
+</html>

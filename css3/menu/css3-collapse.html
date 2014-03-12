@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3制作手风琴菜单演示</title>
+	<meta name="keywords" content="css3学习,css3属性详解,css3 transition,如何学好css3">
+	<meta name="description" content="css手风琴，css3 :target :checked属性等演示代码">
+	<link rel="stylesheet" type="text/css" href="http://caibaojian.com/demo/reset.css" media="all" />
+	<style type="text/css">
+body {
+	background-color: #fff;
+}	
+.demo{width:200px;min-height:400px;margin:40px auto 0}
+.menu > li{line-height:50px;border-bottom:1px solid #3d3d3d;box-shadow:0 1px 0 #888}
+.menu > li:first-child{border-top:1px solid #3d3d3d;box-shadow:0 1px 0 #888,0 1px 0 #888 inset}
+.menu a{position:relative;outline:0;display:block;text-align:left;color:#444;font-size:18px;text-shadow:0 1px 1px #eee;padding:0 40px}
+.menu a:hover{text-decoration:none}
+.menu > li > a:before,.menu > li > a:after{font-size:26px}
+.menu > li > a:before{position:absolute;left:10px;color:#ddd;text-shadow:inherit -1px 0 #fff,0 -2px 0 #1a1a1a,0 1px 2px #1a1a1a}
+.menu > li > a:after{position:absolute;right:10px;color:#ddd}
+.menu > li:nth-child(1) > a:before{content:"1"}
+.menu > li:nth-child(2) > a:before{content:"2"}
+.menu > li:nth-child(3) > a:before{content:"3"}
+.menu > li:nth-child(4) > a:before{content:"4"}
+.menu > li > a:after{content:"+"}
+.menu ul{line-height:30px;display:none;overflow:hidden;-webkit-transition:all .5s linear;-moz-transition:all .5s linear;transition:all .5s linear}
+.menu ul a{color:#000;text-shadow:0 1px 1px #848484;font-size:12px}
+.menu ul a:hover{color:#ccc;text-shadow:0 1px 0 #252525}
+.menu li:target > a:after{content:"-"}
+.menu li:target ul{display:block;border-top:1px solid #3d3d3d;box-shadow:0 1px 0 #888 inset}
+#top_nav{background: rgba(0,0,0,0.6); min-height: 32px;}
+#top_nav ul{ left:50%; position: relative; float: left;}
+#top_nav li{right:50%; position: relative; float: left; padding:0 10px;}
+#top_nav li a{color: #fff; line-height: 30px; font-size: 15px;}
+#top_nav:after{clear: both;}
+input{display: none;}
+label{display: block; line-height: 40px; border-bottom: 1px solid #ddd; cursor:pointer; font-size: 15px; font-weight: bold;}
+.list > ul{display: none; -webkit-transition:all .5s linear;
+-moz-transition:all .5s linear;
+-ms-transition:all .5s linear;
+-o-transition:all .5s linear;
+transition:all .5s linear;}
+#list1:checked + ul{display: block;}
+#list2:checked + ul{display: block;}
+#list3:checked + ul{display: block;}
+#list4:checked + ul{display: block;}
+	</style>
+</head>
+<div class="wrap_top_nav clearfix">
+	<nav id="top_nav">
+		<ul class="inline-style clearfix">
+			<li><a href="http://caibaojian.com" target="_blank">前端博客</a></li>
+			<li><a href="http://caibaojian.com/t/css3" target="_blank">css3详解教程</a></li>
+			<li><a href="http://caibaojian.com/demo/gallery/index.html" target="_blank">css3实例</a></li>
+			<li><a href="http://caibaojian.com/front" target="_blank">前端技术</a></li>
+		</ul>
+	</nav>
+</div>
+<div class="page">
+	<header id="header">
+		<hgroup class="white">
+			<h1><a href="http://caibaojian.com/front/700">CSS3制作手风琴菜单</a></h1>
+			<h2>作者：酷剑</h2>
+		</hgroup>
+	</header>
+	<section class="demo">
+		<ul class="menu">
+			<li class="item1" id="one"><a href="#one">我的朋友 </a>
+				<ul>
+					<li class="subitem1"><a href="#">Cute Kittens </a></li>
+					<li class="subitem2"><a href="#">Strange “Stuff” </a></li>
+					<li class="subitem3"><a href="#">Automatic Fails </a></li>
+					<li class="subitem1"><a href="#">Cute Kittens </a></li>
+					<li class="subitem2"><a href="#">Strange “Stuff” </a></li>
+					<li class="subitem3"><a href="#">Automatic Fails </a></li>
+				</ul>
+			</li>
+			<li class="item2" id="two"><a href="#two">我的邻居</a>
+				<ul>
+					<li class="subitem1"><a href="#">Cute Kittens </a></li>
+					<li class="subitem2"><a href="#">Strange “Stuff” </a></li>
+					<li class="subitem3"><a href="#">Automatic Fails </a></li>
+					<li class="subitem2"><a href="#">Strange “Stuff” </a></li>
+					<li class="subitem1"><a href="#">Cute Kittens </a></li>
+					<li class="subitem2"><a href="#">Strange “Stuff” </a></li>
+				</ul>
+			</li>
+			<li class="item3" id="three"><a href="#three">我的应用</a>
+				<ul>
+					<li class="subitem3"><a href="#">Automatic Fails</a></li>
+				</ul>
+			</li>
+			<li class="item5" id="five"><a href="#five">我的机器</a>
+				<ul>
+					<li class="subitem1"><a href="#">Cute Kittens</a></li>
+					<li class="subitem2"><a href="#">Strange “Stuff”</a></li>
+					<li class="subitem3"><a href="#">Automatic Fails </a></li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+
+	<div class="list">
+		<label for="list1">我的同学</label>
+		<input type="radio" name="list" id="list1" checked="chekced"/>
+		<ul class="list-box1">
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+		</ul>
+		<label for="list2">我的同学</label>
+		<input type="radio" name="list" id="list2"/>
+		<ul class="list-box2">
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+		</ul>
+		<label for="list3">我的同学</label>
+		<input type="radio" name="list" id="list3"/>
+		<ul class="list-box3">
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+		</ul>
+		<label for="list4">我的同学</label>
+		<input type="radio" name="list" id="list4"/>
+		<ul class="list-box4">
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+			<li><a href="">同学名字</a></li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=15910806" charset="UTF-8"></script>
+</div>
+</body>
+</html>

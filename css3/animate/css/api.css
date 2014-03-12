@@ -1,0 +1,120 @@
+﻿body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,th,td{margin:0;padding:0}
+body,button,input,select,textarea,th{font:12px/1.5 '\5FAE\8F6F\96C5\9ED1',Tahoma,"hiragino sans gb",Helvetica,Arial}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+ul,ol,li{list-style:none}
+legend{color:#000}
+fieldset,img{border:0}
+button,input,select,textarea{font-size:100%}
+table{border-collapse:collapse;border-spacing:0}
+em{font-style:normal}
+a{text-decoration:none;color:#333}
+a:hover{text-decoration:underline}
+body{color:#333;background:#fff}
+section,header,article,aside{display:block}
+html,body{width:100%;overflow-x:hidden}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-button:vertical{display:none}
+::-webkit-scrollbar-track:vertical{background-color:black}
+::-webkit-scrollbar-track-piece{background:#FFF}
+::-webkit-scrollbar-thumb:vertical{background-color:#8E8E8E;border-radius:1px}
+::-webkit-scrollbar-thumb:vertical:hover{background-color:#3B3B3B}
+::-webkit-scrollbar-corner:vertical{background-color:#535353}
+::-webkit-scrollbar-resizer:vertical{background-color:#FF6E00}
+a{color:#ee4900}
+a:hover{text-decoration:none;color:#f3711f}
+.clearfix{*zoom:1}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+.mod_header{width:100%;height:60px;background:#20252b;border-bottom:2px solid #ff5f19;position:fixed;left:0;z-index:9}
+.mod_header .inner{position:relative;width:980px;min-height:60px;margin:0 auto}
+.mod_header h1{position:relative;float:left;height:60px;width:173px;text-indent:-9999px}
+.ico_logo{position:absolute;left:0;top:8px;width:117px;height:45px;background:url("http://ecd.tencent.com/css3/css/img/logo.png") no-repeat 0 0}
+.mod_nav{height:60px;overflow:hidden;float:left;border-right:1px solid #474748}
+.mod_nav li{float:left;border-left:1px solid #474748}
+.mod_nav li a{display:block;height:60px;width:150px;border-left:1px solid #000;text-align:center;line-height:60px;font-size:14px;font-family:'\5FAE\8F6F\96C5\9ED1';color:#fff}
+.mod_nav li a.on{background:#ef4900}
+.mod_mini_nav{position:absolute;right:0;color:#fff;text-align:right}
+.mod_mini_nav p:nth-of-type(2){padding-top:15px}
+.mod_form{width:100%;clear:both;background:#34393e}
+.mod_footer{width:100%;height:30px;line-height:30px;margin-top:30px;background:#34393E;color:#787878;overflow:hidden}
+.mod_footer>div{position:relative;width:980px;margin:0 auto}
+.mod_footer p{float:left;padding-right:5px}
+.mod_footer .opt a{margin:0 5px}
+.mod_footer .support{position:absolute;right:0;padding:0}
+.mod_footer a{color:#787878;text-decoration:underline}
+.mod_footer a:hover{color:#fff}
+.pop_msg{position:fixed;left:50%;top:50%;margin-top:-15px;height:30px;line-height:30px;padding:0 15px;font-size:14px;font-weight:bold;border:3px solid #333;background:#EF4900;box-shadow:1px 1px 8px #000;display:none;z-index:100000;color:#fff}
+.pagelist{text-align:center;padding:10px 0}
+.pagelist a{display:inline-block;margin:0 2px;height:26px;line-height:26px;padding:0 10px;border:1px solid #ddd;background:#f7f7f7;color:#000}
+.pagelist .cur{background:#EF4900;color:#fff}
+.pop_dialog{position:fixed;top:50%;left:50%;border:2px solid #000;background:#fff;z-index:100;box-shadow:-1px 1px 10px #333}
+.pop_dialog.downs{border:none}
+.pop_dialog .hd{padding:0 10px;position:relative}
+.pop_dialog .hd h3{height:26px;line-height:26px;font-weight:normal;display:none}
+.pop_dialog .inner{padding:20px}
+.pop_dialog .inner h4{font-size:14px}
+.pop_dialog .inner p{padding:5px 10px 0 0}
+.pop_dialog .inner .big{position:relative;padding-left:80px}
+.pop_dialog .pop_close{position:absolute;right:-8px;top:-8px;width:15px;height:15px;overflow:hidden;background:#000;color:#fff;text-align:center;line-height:12px}
+.pop_dialog.downs .pop_close{top:0;right:15px;width:22px;height:22px;line-height:100px;background:url("http://ecd.tencent.com/css3/css/img/close.png") no-repeat 0 0}
+.pop_dialog .pop_close:hover{background-color:#EE4900}
+.icon_success,.icon_error{position:absolute;left:20px;top:3px;width:42px;height:42px;background:url("http://ecd.tencent.com/css3/css/img/icon.png") no-repeat 0 0}
+.icon_error{background-position:0 -43px}
+.pop_dialog .inner .small{position:relative;padding-left:80px}
+.pop_dialog .inner .small .icon_success{top:-10px}
+.pop_mask{display:none;position:fixed;background:#000;top:0;filter:alpha(opacity=40);opacity:.4;width:100%;height:100%;z-index:10}
+.down{width:625px;height:237px;background:url("http://ecd.tencent.com/css3/css/img/down.png") no-repeat 0 0;position:relative;margin:60px auto}
+.down a{display:block;position:absolute;width:102px;height:156px;line-height:1000px;overflow:hidden;top:85px}
+.down .down_chrome{left:55px}
+.down .down_safari{left:260px}
+.down .down_firefox{left:472px}
+body{background:#f9f9f9}
+.mod_footer{margin:0}
+.wrap{position:relative;width:980px;min-height:1200px;margin:60px auto 20px;background:#fff}
+.menu{float:left;width:220px}
+.menu h2{font-size:14px;border-bottom:2px solid #ccc;padding:4px 0 4px 10px}
+.menu li{height:24px;line-height:24px;border-bottom:1px solid #ddd;overflow:hidden}
+.menu li a{display:block;padding-left:10px;color:#555}
+.menu li a span{color:#999;padding-left:5px}
+.menu li a:hover{background:#dbe9fc;text-decoration:none}
+.menu li a.hover{background:#ff4e00;color:#fff;text-decoration:none}
+.menu li a.hover span{color:#eee}
+.scroll_bar{position:absolute;top:0;bottom:0;background:#aaa;width:5px;left:220px}
+.content{padding:0 0 20px 225px;min-height:400px}
+.content .inner{padding:20px}
+.code{font-size:14px}
+.mod_detail h1{padding:5px 10px;border-bottom:2px solid #ff4e00;font-size:24px;font-weight:normal;background:#fff}
+.mod_article h2{font-size:16px;padding:10px 10px 0}
+.mod_article .code{padding:10px 0}
+.mod_article .code pre{line-height:16px}
+.mod_table{padding:10px 0}
+.mod_table table{border:1px solid #dedede;width:100%}
+.mod_table td{border:1px solid #dedede;padding:5px 10px}
+.mod_table th{border:1px solid #dedede;padding:5px 10px;background:#f9f9f9;font-weight:bold;text-align:left}
+.mod_table .center th, .mod_table .center td{text-align:center}
+.mod_article .code .code_box{background:#f9f9f9;display:block;border:1px solid #dedede}
+.mod_article .code .code_box .code_css,.mod_article .code .code_box .code_value{padding:10px;display:block;line-height:24px}
+.mod_article .intro{margin:10px 0;background:#f9f9f9;padding:7px 0;font-size:14px;border:1px solid #dedede}
+.mod_article .intro p{padding:3px 10px}
+.code_textarea{display:none}
+pre{margin-bottom:20px}
+.mod_tag{position:relative;display:block;margin-bottom:-1px;border:1px solid #dedede;border-bottom:none;height:25px;line-height:25px;text-align:center;width:60px;background:#fff;cursor:pointer}
+.btn_run{display:inline-block;height:23px;line-height:22px;min-width:50px;text-align:center;padding:0 10px;background:-moz-linear-gradient(#fff,#dce9fb);background:-webkit-gradient(linear,left top,left bottom,from(#fff),to(#dce9fb));border:1px solid #d0d0d0;color:#757576;border-radius:3px}
+.btn_run:hover{text-decoration:none;background:#fd4d00;color:#fff;border-color:#fd4d00}
+.demo_box{border:1px solid #3DA5DC;background:#a4dcf9;height:100px;width:200px;text-align:center;color:#fff}
+.mod_run_box{background:#fff;display:none;position:fixed;z-index:100;border:5px solid #ccc;width:700px;min-height:300px;top:50%;left:50%;margin:-155px 0 0 -355px}
+.mask{position:fixed;left:0;top:0;height:100%;width:100%;background:#000;filter:alpha(opacity=70);opacity:.7;display:none;z-index:2}
+.mod_btn_box{position:absolute;top:-29px;height:24px;left:-5px}
+.mod_btn_box a{display:block;height:24px;line-height:24px;padding:0 15px;text-align:center;background:#E1ECFE;float:left;margin-right:3px;-webkit-transition-duration:.3s;-moz-transition-duration:.3s}
+.mod_btn_box a:hover{text-decoration:none;color:#fff;background:#0F820C}
+.edit_code_box{position:absolute;height:150px;bottom:-188px;left:-5px;background:#fff;width:680px;padding:10px;border:5px solid #f90;display:none}
+.edit_code_textarea{width:336px;float:left;margin-right:2px;height:150px;overflow-x:hidden}
+.default{color:#F60}
+.mod_run_code{height:100%;overflow:hidden}
+.code_inner{position:relative}
+.code_inner .mod_copy{display:;position:absolute;right:0;top:-5px;width:72px;height:22px;line-height:22px;border:1px solid #ddd;background:#f2f2f2;cursor:pointer;text-align:center}
+.code_inner:hover .mod_copy{display:block}
+.code_inner .mod_copy:hover{color:#fff;background:green}
+.code_inner .clipboardswf{position:absolute;height:100%;width:100%;left:0;top:0}
+.gui_success{position:fixed;left:50%;top:50%;margin:-22px 0 0 -62px;width:120px;height:40px;line-height:40px;text-align:center;font-size:14px;font-weight:bold;background:#fff;border:2px solid #666;border-radius:2px;box-shadow:2px 2px 8px #333;color:#EF4900}
+.hidden{display:none}
+#GeneratedByCssGaga184{transform:rotate(20121218105919deg)}

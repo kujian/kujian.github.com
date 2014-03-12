@@ -1,0 +1,222 @@
+ <!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="ECD数字音乐设计中心前端开发组" />
+<!--
+    作者：ECD数字音乐设计中心前端开发组
+-->
+<title>scale</title>
+<link href="../../css/api.css" rel="stylesheet" media="screen" />
+<script src="../../js/jquery-1.7.2.min.js"></script>
+<script src="../../jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.js"></script>
+<script src="../../js/ZeroClipboard.js"></script>
+<script src="../../js/lab.js"></script>
+<script>$.SyntaxHighlighter.init();</script>
+</head>
+
+<body>
+<div id="loadHtml">
+    <div class="mod_detail">
+        <div class="column">
+            <h1>scale()</h1>
+        </div>
+        <!--语法 star-->
+        <div class="mod_article">
+            <div class="column">
+                <h2>语法</h2>
+                <div class="code">
+                    <div class="code_box">
+                        <div class="code_css">
+                            <strong>transform:</strong>scale(&lt;number&gt;[, &lt;number&gt;]);
+                        </div>
+                    </div>
+                </div>
+                <div class="mod_table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th width="20%">语法项目</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>初始值</td>
+                                <td>none</td>
+                            </tr>
+                            <tr>
+                                <td>适用于</td>
+                                <td>块元素和行内元素</td>
+                            </tr>
+                            <tr>
+                                <td>可否继承</td>
+                                <td>否</td>
+                            </tr>
+                            <tr>
+                                <td>取值</td>
+                                <td>正数，负数</td>
+                            </tr>
+                            <tr>
+                                <td>媒介</td>
+                                <td>视觉</td>
+                            </tr>
+                            <tr>
+                                <td>版本</td>
+                                <td>CSS3.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--语法 end-->
+        
+        <!--说明 star-->
+        <div class="mod_article">
+            <div class="column">
+                <h2>说明</h2>
+                <div class="intro">
+                    <p>scale()函数能够缩放元素。</p>
+                </div>
+            </div>
+        </div>
+        <!--说明 end-->
+        <!--取值 star-->
+        <div class="mod_article">
+            <div class="column">
+                <h2>取值</h2>
+                <div class="code">
+                    <div class="code_box">
+                        <div class="code_value">
+                            <p><strong>scale(&lt;number&gt;[, &lt;number&gt;]);</strong>表示使元素在X轴和Y轴同时缩放。&lt;number&gt;表示缩放倍数，可以是正数，负数和小数。负数是先翻转元素然后再缩放。包含两个参数，如果缺少第二个参数，那么第二个参数的值等于第一个参数。</p>
+                            <p><strong>scaleX(&lt;number&gt;):</strong>表示只在X轴(水平方向)缩放元素。</p>
+                            <p><strong>scaleY(&lt;number&gt;):</strong>表示只在Y轴(垂直方向)缩放元素。</p>
+                            <p><strong>scaleZ(&lt;number&gt;):</strong>表示只在Z轴缩放元素。前提是元素本身或者元素的父元素设定了透视值</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--取值 end-->
+        <!--实例代码 star-->
+        <div class="mod_article">
+            <div class="column">
+                <h2>实例代码</h2>
+                <div class="code">
+                    <div class="code_inner">
+                        <span class="mod_tag">CSS</span>
+                        <span class="mod_copy">复制代码<div class="clipboardswf" id="copy_demo_css"></div></span>
+                        <textarea id="css_code" class="code_textarea">
+                        </textarea>
+                        <pre class="language-css">
+.scale_1{
+    -webkit-transform:scale(0.8,1.2);
+    -moz-transform:scale(0.8,1.2);
+    position:absolute;
+    left:0;
+    top:80px;
+    background:#4d6ea6;
+}
+.scale_2{
+    -webkit-transform:scale(0.5);
+    -moz-transform:scale(0.5);
+    position:absolute;
+    left:200px;
+    top:80px;
+    background:#b9f9cb;
+}
+.scale_3{
+    -webkit-transform:scale(-1.2,1.2);
+    -moz-transform:scale(-1.2,1.2);
+    position:absolute;
+    left:450px;
+    top:80px;
+}                        
+                        </pre>
+                    </div>
+                    <div class="code_inner">
+                        <span class="mod_tag">HTML</span>
+                        <span class="mod_copy">复制代码<div class="clipboardswf" id="copy_demo_html"></div></span>
+                        <textarea id="html_code"  class="code_textarea">
+                        </textarea>
+                        <pre class="language-html">
+&lt;div class="demo_box scale_1"&gt;宽度缩小80%，高度放大120%&lt;/div&gt;
+&lt;div class="demo_box scale_2"&gt;宽高同时缩小一半&lt;/div&gt;
+&lt;div class="demo_box scale_3"&gt;先翻转再放大1.2倍&lt;/div&gt;                        
+                        </pre>
+                    </div>
+                    <a href="#" id="run_demo" class="btn_run">运行</a>
+                    <a href="#" id="run_demo_new" class="btn_run">新窗口运行</a>
+                    
+                </div>
+            </div>
+        </div>
+        <!--实例代码 end-->
+        <!--兼容性 star-->
+        <div class="mod_article">
+            <div class="column">
+                <h2>兼容性</h2>
+                <div class="mod_table">
+                    <table class="center">
+                        <thead>
+                            <tr>
+                                <th class="ie" width="20%">IE</th>
+                                <th class="firefox" width="20%">Firefox</th>
+                                <th class="opera" width="20%">Opera</th>
+                                <th class="safari" width="20%">Safari</th>
+                                <th class="chrome" width="20%">Chrome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>IE 10+</td>
+                                <td>Firefox 3.5+</td>
+                                <td>Opera 11.50+</td>
+                                <td>Safari 10+</td>
+                                <td>Chrome 2.0+</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--兼容性 end-->
+        <!--参考文献 star-->
+        <div class="mod_article">
+            <div class="column">
+                <h2>参考文献</h2>
+                <div class="intro">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <!--参考文献 end-->
+        <!--<div id="js_gui_suc" class="gui_success hidden">复制代码成功!</div>-->
+        <div id="js_gui_suc" class="pop_dialog hidden" style="display:;margin:-100px 0 0 -120px;width:240px;">
+            <div class="inner">
+                <!--小浮层-->
+                <div class="small">
+                    <i class="icon_success"></i>
+                    <h4>代码复制成功</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--代码运行模块-->
+<div class="mod_run_box" id="mod_run_box">
+    <div class="mod_btn_box">
+        <a href="#" id="edit">修改</a>
+        <a href="#" id="run_again">重新运行</a>
+        <a href="#" id="close">关闭</a>
+    </div>
+    <div class="edit_code_box" id="edit_code_box">
+        <textarea id="css_code_edit" class="edit_code_textarea"></textarea>
+        <textarea id="html_code_edit"  class="edit_code_textarea"></textarea>
+    </div>
+    <div class="mod_run_code" id="mod_run_code"></div>
+</div>
+<div class="mask" id="mask"></div>
+</body>
+</html>
