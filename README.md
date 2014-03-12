@@ -1,1 +1,1 @@
-a github blog demo with custom domain at (http://kujian.caibaojian.com)
+a github blog demo with custom domain at (http://code.caibaojian.com)
