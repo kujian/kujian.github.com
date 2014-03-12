@@ -1,7 +1,8 @@
 ---
 layout: post
+title: 搭建github page以及使用感受
 category : blog
-tagline: "Supporting tagline"
+tagline: "github 不适合技术博客"
 tags : [blog]
 ---
 {% include JB/setup %}
