@@ -19,8 +19,8 @@ tagline: 关注前端开发，HTML5和CSS3等领域
 </ul>
 <h3>前端开发手册</h3>
 <ul class="posts">
-<li><a href="http://caibaojian.com/doc/css3/">CSS3手册</a></li>
-<li><a href="http://caibaojian.com/doc/jquery/">jQuery 1.7中文手册</a></li>
+<li><a href="http://code.caibaojian.com/doc/css3/">CSS3手册</a></li>
+<li><a href="http://code.caibaojian.com/doc/jquery/">jQuery 1.7中文手册</a></li>
 </ul>
 <h3>其他内容推荐</h3>
 <ul class="posts">
