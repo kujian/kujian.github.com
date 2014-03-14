@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>提交bug及获取更新</title>
+<link type="text/css" rel="stylesheet" href="style/style.css"  />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("input:button").click(function(){
+		if($("#yourname").val()==""){
+			alert("主题不能为空");
+			$("#yourname").focus();
+			return false;
+		}
+		if($("#message").val()==""){
+			alert("内容不能为空");
+			$("#message").focus();
+			return false;
+		}
+		$("#load").show();
+		//var data=$('form:first').serialize();
+		$.ajax({
+				url:"http://www.hemin.cn/jq_manual/email.php",
+				type:"post",
+				data:$('form:first').serialize(),
+				dataType:"html",
+				success: function(data){
+					$("#load").hide();
+					alert("提交成功!感谢你的反馈。");
+				},
+				error: function(){
+					$("#load").hide();
+					alert("提交失败!");
+				}
+		});
+	});
+	
+})
+</script>
+</head>
+<body id="split">
+<div id="content">
+  <div rel="bugandUpdate">
+    <h2> 提交bug及获取更新</h2>
+    <h3> 概述</h3>
+    <div class="desc">
+      <p> </p>
+      <div class="longdesc">
+        <p>如果大家使用过程中发现了什么错误或有哪些不足，可以给我Email：<a href="mailto:hm@hemin.cn" title="点击邮箱">hm@hemin.cn</a>来反馈，我将不胜感激。</p>
+        <p style="text-align:center; font-size:14px;">【您也可以填写表单与我联系】</p>
+        <form id="formbug"  method="post">
+          <table border="0">
+            <tr>
+              <th>发件人:</th>
+              <td><input type="text" maxlength="40" size="26" id="email" name="email" />
+                您的Email（建议填写）</td>
+            </tr>
+            <tr>
+              <th>主&nbsp;&nbsp;&nbsp;题:</th>
+              <td><input type="text" maxlength="40" size="26" id="yourname" name="yourname" />
+                <span class="red">*</span></td>
+            </tr>
+            <tr>
+              <th valign="top">内&nbsp;&nbsp;&nbsp;容:</th>
+              <td><textarea name="message" id="message" cols="60" rows="7"></textarea>
+                <span class="red">*</span></td>
+            </tr>
+            <tr>
+              <th>&nbsp;</th>
+              <td><input name="add" type="hidden" value="1" />
+                <input type="button" value="提 交" name="submit" />
+                <img id="load" style="display:none;" src="img/loading.gif" width="16" height="16" /></td>
+            </tr>
+          </table>
+          <p id="res"></p>
+        </form>
+        <p>
+        <h3>版本信息： </h3>
+        $Rev: 1.8.3 $ <br />
+        $Author: hemin $ <br />
+        $Date: 2012-12-15 01:16:23 +0800 (周六) <br />
+        $changelog: <a href="http://www.hemin.cn/jq_manual/downloads/changelog.txt">changelog.txt</a>
+        </p>
+        <h3>检查更新： </h3>
+        <div id="update">
+          <button id= "checkUpdate" onclick="window.curVer='20121215';$('<script src=\'http://www.hemin.cn/jq_manual/js/newUpdate.js?'+(+new Date)+'\' type=\'text/javascript\' charset=\'utf-8\'></script>').appendTo('head');" style='padding:2px 5px'>检查更新</button>
+        </div>
+        </p>
+      </div>
+    </div>
+  </div>
+  <h3 style="text-align:center;">hemin制作【hm@hemin.cn】</h3>
+</div>
+</body>
+</html>
