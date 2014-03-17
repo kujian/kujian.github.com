@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 	<title>animated links</title>
 	<style type="text/css">
 	/*Fontawesome Iconfont*/
@@ -54,7 +55,7 @@ h1 {
 }
 /*Animation controls using checkbox hack*/
 /*Animate content area to the right*/
-#tm:checked ~ section {transform: translateX(150px);}
+#tm:checked ~ section { margin-left:150px; }
 /*Animate links from right to left + fade in effect*/
 #tm:checked ~ .sidenav b {opacity: 1; transform: translateX(0);}
 
